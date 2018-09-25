@@ -1,0 +1,270 @@
+/* Animations */
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Typography */
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { clear: both; }
+
+p { margin-bottom: 1.5em; }
+
+ul { list-style-type: none; }
+
+.luck {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #E3B505;
+}
+
+/* Layout */
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.masthead {
+    padding: 1em 2em;
+    background-color: #000000;
+    color: white;
+}
+
+.masthead h1 {
+    text-align: center;
+}
+
+.intro {
+    padding: 2em 2em;
+    color: #fff;
+    background: #2F6690;
+}
+
+.intro p,
+.test-area {
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+.test-area {
+    margin-bottom: 4em;
+    padding: 0 2em;
+		text-align: center;
+}
+
+.test-wrapper {
+    border: 10px solid #000;
+    border-radius: 10px;
+}
+
+#origin-text {
+    margin: 1em 0;
+    padding: 1em 1em 0;
+    background-color: #E3B505;
+		color: #000;
+}
+
+#origin-text p {
+    margin: 0;
+    padding-bottom: 1em;
+		font-weight: bold;
+}
+
+.test-wrapper { display: flex; }
+
+.test-wrapper textarea { flex: 1; }
+
+.meta {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.timer, .counter {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.counter {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.wpm, #noe { display: none; }
+
+#reset {
+    padding: .5em 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #95190C;
+    background: white;
+		border-radius: 10px;
+    border: 10px solid #95190C;
+}
+
+#reset:hover, #stop-clock:hover {
+    color: white;
+    background-color: #95190C;
+		cursor: pointer;
+}
+
+#laps { font-size: 1.5em; }
+
+#laps li {
+	background-color: #008148;
+	border-bottom: 1px solid #000;
+}
+
+.total-time {
+  font-weight: bold;
+  color: #008148;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer a { color: #fff; }
+
+footer a:visited { color: #fff; }
+
+footer ul { display: flex; }
+
+footer li:hover { transform: scale(1.2);}
+
+footer ul li { margin-left: 16px; }
+
+footer p {
+    text-transform: uppercase;
+    font-size: 14px;
+    align-self: center;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer p {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    footer ul li {
+        margin: 0 8px;
+    }
+}
+
+/* Popup styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Fallback color */
+    animation: bounceIn 1s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    background-color: #95190C;
+    float: right;
+    padding: 3px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
