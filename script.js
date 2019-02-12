@@ -55,8 +55,8 @@ function runTimer(){
   theTimer.innerHTML = currentTime;
   timer[3]++;
 
-  timer[0] = Math.floor((timer[3] / 100) / 60); // miliseconds divided by 100 to get seconds (???), and then seconds divided by 60 to get minutes
-  timer[1] = Math.floor((timer[3] / 100) - (timer[0] * 60)); // miliseconds divided by 100 to get seconds (???), and then substracted minutes * 60, to get back seconds on 0 when they reach 60
+  timer[0] = Math.floor((timer[3] / 100) / 60); // miliseconds divided by 100 to get seconds, and then seconds divided by 60 to get minutes
+  timer[1] = Math.floor((timer[3] / 100) - (timer[0] * 60)); // miliseconds divided by 100 to get seconds, and then substracted minutes * 60, to get back seconds on 0 when they reach 60
   timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000)); // miliseconds - seconds * 100, to get back hundredths on 0 when they reach 100, and then substracted minutes * 6000, everytime minutes gets to 100
 }
 
@@ -96,7 +96,7 @@ function noeLap() {
 // Count number of words (now), sum of all entries, and then finally WPM
 function totalCharacters() {
     for (var i = 0; i < noeLi.length; i++) {
-    charactersCount += (noeLi[i].innerHTML * 1);
+      charactersCount += (noeLi[i].innerHTML * 1);
     }
     let now = charactersCount / 5; // now = Number of words
     let tTime = totalTime.innerText;
