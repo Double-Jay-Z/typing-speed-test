@@ -2,87 +2,87 @@
 <html lang="en-US">
 
 <head>
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vanilla JS Typing Speed Test</title>
-    <script src="script.js" async></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vanilla JS Typing Speed Test</title>
+  <script src="script.js" async></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="masthead">
-        <h1>Test Your Typing Speed</h1>
-    </header>
-    <main class="main">
-        <div class="intro">
-            <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the yellow field below.
-              The timer starts when you start typing, and only stops when you match the text exactly.<br>
-              DON'T try to copy/paste, or drag&drop the text. It won't work!<br><br>
-              Also, every time when you match the sentence, you'll be able to see the score, and how much time you needed for one sentence.
-              <br><br>
-              When you finish all the sentences, you'll be able to see your <b>WPM</b> score. (Words Per Minute)</p><br>
-              <p class="luck">Good Luck!</p>
-        </div><!-- .intro -->
-        <section class="test-area">
-            <div id="origin-text">
-                <p>This is the text to test.</p>
-            </div><!-- #origin-text -->
+  <header class="masthead">
+    <h1>Test Your Typing Speed</h1>
+  </header>
 
-            <div class="test-wrapper">
-                <textarea id="test-area" name="textarea" rows="5" placeholder="The clock starts when you start typing." onPaste="return false" onDrag="return false" onDrop="return false"></textarea>
-            </div><!-- .test-wrapper -->
+  <main class="main">
+    <div class="intro">
+      <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the yellow field below.
+        The timer starts when you start typing, and only stops when you match the text exactly.<br>
+        DON'T try to copy/paste, or drag&drop the text. It won't work!<br><br>
+        Also, every time when you match the sentence, you'll be able to see the score, and how much time you needed for
+        one sentence.
+        <br><br>
+        When you finish all the sentences, you'll be able to see your <b>WPM</b> score. (Words Per Minute)</p><br>
+      <p class="luck">Good Luck!</p>
+    </div><!-- .intro -->
+    <section class="test-area">
+      <div id="origin-text">
+        <p>This is the text to test.</p>
+      </div><!-- #origin-text -->
 
-            <div class="meta">
-              <button id="reset">Start over</button>
+      <div class="test-wrapper">
+        <textarea id="test-area" name="textarea" rows="5" placeholder="The clock starts when you start typing."
+          onPaste="return false" onDrag="return false" onDrop="return false"></textarea>
+      </div><!-- .test-wrapper -->
 
-              <section id="clock">
-                    <div class="timer">00:00:00</div>
-              </section>
+      <div class="meta">
+        <button id="reset">Start over</button>
 
-              <!-- <button id="stop-clock">Stop clock</button> -->
-            </div><!-- .meta -->
+        <section id="clock">
+          <div class="timer">00:00:00</div>
+        </section>
+      </div><!-- .meta -->
 
-          <div class = "stores">
-            <div class="counter">Score: </div>
+      <div class="stores">
+        <div class="counter">Score: </div>
 
-            <h3>Time per sentence (starting from the first one):</h3>
-            <ul id="laps"></ul>
-          </div><!-- .stores -->
+        <h3>Time per sentence (starting from the first one):</h3>
+        <ul id="laps"></ul>
+      </div><!-- .stores -->
 
-          <div class="wpm">
-            Number of characters including spaces:
-          </div><!-- .wpm -->
-          <ul id="noe"></ul>
-        </section><!-- .test-area -->
-    </main>
+      <div class="wpm">
+        Number of characters including spaces:
+      </div><!-- .wpm -->
+
+      <ul id="noe"></ul>
+    </section><!-- .test-area -->
+  </main>
 
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h1 style="text-align: center">Congratulations!</h1>
-
       <p>You have succeeded in matching all sentences. The total time you needed for that:
-      <span class="total-time"></span><br>
+        <span class="total-time"></span><br>
       </p>
-
       <p>
-      <span id="wpm-span"></span></p>
+        <span id="wpm-span"></span></p>
     </div><!-- .modal-content -->
-
   </div><!-- #myModal -->
 
-    <footer>
-        <p>Inspired by Morten Rand-Hendriksen</p>
-        <p>Made by Jovan Jovanovic</p>
-        <ul>
-          <li><a href="https://github.com/jovan6jovan/" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/jovan-jovanovi%C4%87-3b93a686/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a></li>
-        </ul>
-    </footer>
-
+  <footer>
+    <p>Inspired by Morten Rand-Hendriksen</p>
+    <p>Made by Jovan Jovanovic</p>
+    <ul>
+      <li><a href="https://github.com/jovan6jovan/" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/jovan-jovanovi%C4%87-3b93a686/" target="_blank"><i
+            class="fab fa-linkedin-in fa-2x"></i></a></li>
+    </ul>
+  </footer>
 </body>
 
 </html>
